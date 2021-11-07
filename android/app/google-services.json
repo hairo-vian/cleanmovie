@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "576892477547",
+    "project_id": "cleanmovie-714ec",
+    "storage_bucket": "cleanmovie-714ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:576892477547:android:77c09368d39b9ee676112e",
+        "android_client_info": {
+          "package_name": "com.example.cleanmovie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "576892477547-o96hds0v9gs9llpo5o780o5ffe9i9ar5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpWF0ceQJRh6MQ96unWa6tmLyyTLpsDLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "576892477547-o96hds0v9gs9llpo5o780o5ffe9i9ar5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
