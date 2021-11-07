@@ -1,11 +1,14 @@
+import 'package:cleanmovie/base_locator.dart';
+import 'package:cleanmovie/route_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'features/presentation/cubit/movie/movie_cubit.dart';
-import 'injection.dart' as di;
-import 'features/presentation/pages/home_screen.dart';
+import 'features/home/presentation/cubit/movie/movie_cubit.dart';
+import 'features/home/di/home_injection.dart' as di;
+import 'features/home/presentation/pages/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  setupLocator();
   await di.init();
   runApp(const MyApp());
 }
@@ -18,13 +21,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => di.sl<MovieCubit>()..getMovies(),
-      child: MaterialApp(
+      child: const MaterialApp(
         title: 'Movie App',
         debugShowCheckedModeBanner: false,
         initialRoute: HomeScreen.routeName,
-        routes: {
-          HomeScreen.routeName: (context) => const HomeScreen()
-        },
+        onGenerateRoute: RouteGenerator.generateRoute,
       ),
     );
   }

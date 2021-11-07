@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'package:cleanmovie/features/domain/entities/movie_entity.dart';
+import 'package:cleanmovie/contracts/api_contracts.dart';
+import 'package:cleanmovie/features/home/domain/entities/movie_entity.dart';
 import 'package:dio/dio.dart';
 
 import 'api_remote_data_source.dart';
@@ -13,9 +14,8 @@ class ApiRemoteDataSourceImpl extends ApiRemoteDataSource {
 
   @override
   Stream<MovieEntity> getMovies() async* {
-    final response = await dio.get(
-      'https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=1'
-    );
+    String movieUrl = ApiContract.MOVIE_LIST.replaceAll("{apiKey}", apiKey);
+    final response = await dio.get(movieUrl);
 
     final results = MovieEntity.fromJson(json.decode(response.toString()));
     yield results;

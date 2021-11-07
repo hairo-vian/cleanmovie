@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:cleanmovie/features/domain/entities/movie_entity.dart';
+import 'package:cleanmovie/features/home/domain/entities/movie_entity.dart';
 
 class Movie extends MovieEntity {
   Movie({

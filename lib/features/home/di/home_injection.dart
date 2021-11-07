@@ -1,10 +1,10 @@
 import 'package:cleanmovie/base_locator.dart';
-import 'package:cleanmovie/features/data/remote/datasource/api/api_remote_data_source.dart';
-import 'package:cleanmovie/features/data/remote/datasource/api/api_remote_data_source_impl.dart';
-import 'package:cleanmovie/features/data/remote/repositories/movie_repository_impl.dart';
-import 'package:cleanmovie/features/domain/repositories/movie_repository.dart';
-import 'package:cleanmovie/features/domain/usecase/get_movies_usecase.dart';
-import 'package:cleanmovie/features/presentation/cubit/movie/movie_cubit.dart';
+import 'package:cleanmovie/features/home/data/remote/datasource/api/api_remote_data_source.dart';
+import 'package:cleanmovie/features/home/data/remote/datasource/api/api_remote_data_source_impl.dart';
+import 'package:cleanmovie/features/home/data/remote/repositories/movie_repository_impl.dart';
+import 'package:cleanmovie/features/home/domain/repositories/movie_repository.dart';
+import 'package:cleanmovie/features/home/domain/usecase/get_movies_usecase.dart';
+import 'package:cleanmovie/features/home/presentation/cubit/movie/movie_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -27,10 +27,5 @@ Future<void> init() async {
   //Data Source
   sl.registerLazySingleton<ApiRemoteDataSource>(
           () => ApiRemoteDataSourceImpl(dio: gDio));
-
-  //External
-  final dio = Dio();
-
-  sl.registerLazySingleton(() => dio);
 }
 

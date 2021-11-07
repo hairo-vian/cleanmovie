@@ -1,5 +1,6 @@
-import 'package:cleanmovie/features/presentation/cubit/movie/movie_cubit.dart';
-import 'package:cleanmovie/features/presentation/cubit/movie/movie_state.dart';
+import 'package:cleanmovie/contracts/general.dart';
+import 'package:cleanmovie/features/home/presentation/cubit/movie/movie_cubit.dart';
+import 'package:cleanmovie/features/home/presentation/cubit/movie/movie_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,11 +11,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: BlocBuilder<MovieCubit, MovieState>(
         builder: (context, movieState) {
           if(movieState is MovieLoading) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           } else if (movieState is MovieLoaded) {
@@ -26,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                     image: DecorationImage(
                       image: NetworkImage(
-                        'https://image.tmdb.org/t/p/original/${movie.posterPath}'
+                        '${General.NETWORK_IMAGE}${movie.posterPath}'
                       ),
                     ),
                   ),
@@ -34,7 +36,7 @@ class HomeScreen extends StatelessWidget {
               }).toList(),
             );
           } else {
-            return Text(
+            return const Text(
               'error'
             );
           }

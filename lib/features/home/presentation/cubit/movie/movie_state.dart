@@ -1,4 +1,4 @@
-import 'package:cleanmovie/features/domain/entities/movie_entity.dart';
+import 'package:cleanmovie/features/home/domain/entities/movie_entity.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class MovieState extends Equatable {

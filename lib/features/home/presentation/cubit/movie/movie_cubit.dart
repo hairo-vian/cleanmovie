@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:cleanmovie/features/domain/usecase/get_movies_usecase.dart';
+import 'package:cleanmovie/features/home/domain/usecase/get_movies_usecase.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'movie_state.dart';
