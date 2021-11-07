@@ -1,3 +1,4 @@
+import 'package:cleanmovie/base_locator.dart';
 import 'package:cleanmovie/features/presentation/cubit/movie/movie_cubit.dart';
 import 'package:cleanmovie/features/presentation/cubit/movie/movie_state.dart';
 import 'package:flutter/material.dart';
